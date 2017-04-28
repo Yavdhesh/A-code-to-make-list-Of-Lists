@@ -1,0 +1,42 @@
+
+
+//below code to generate a matrix from an ordered list rows, where row size is known to us by any means.
+
+
+$scope.salaryData = $scope.responseData.calculatedSalary;
+																$scope.headerData = $scope.responseData.salCalOutPutFields.header[0];
+																$scope.rowData=$scope.responseData.salCalOutPutFields.row;
+																
+																//below code renders the output table
+																angular.element('#salCalOutPutTable').show();
+																console
+																		.log("checking for singapore and israel");
+																console
+																		.log($scope.salaryData);
+																console
+																		.log($scope.salaryData.BASIC_SALARY);
+
+																var array = $scope.rowData;
+
+																// Taking first
+																// 0th array of
+																// header array
+																var headerArrayLength = $scope.responseData.salCalOutPutFields.header[0].length;
+
+																
+																var arrayOfArray = [];
+																for (var i = 0; i < array.length; i++) {
+
+																	var arraytobePut = [];
+																	for (var j = i; j < i
+																			+ headerArrayLength; j++) {
+																		arraytobePut
+																				.push(array[j]);
+
+																	}
+																	arrayOfArray
+																			.push(arraytobePut);
+																	i = i
+																			+ (headerArrayLength - 1);
+																}
+															
